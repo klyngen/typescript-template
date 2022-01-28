@@ -1,1 +1,1 @@
-export class Test {}
+import "./test.component";
