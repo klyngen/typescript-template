@@ -4,6 +4,9 @@ basic libraries
 
 ## Getting started
 
+
+
+* `glit clone https://github.com/klyngen/typescript-template your-project-name`
 * `npm install`
 * `npm start`
 * `npm test`
