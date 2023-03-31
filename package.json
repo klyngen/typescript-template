@@ -21,6 +21,8 @@
     "html-webpack-plugin": "^5.5.0",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
+    "sass": "^1.60.0",
+    "sass-loader": "^13.2.2",
     "ts-jest": "^29.0.5",
     "ts-loader": "^9.4.2",
     "ts-node": "^10.9.1",

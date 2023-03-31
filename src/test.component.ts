@@ -1,4 +1,8 @@
+import styles from './test-style.scss';
 export class TestWebComponent extends HTMLElement {
+
+  static styles = [styles];
+
   constructor() {
     super();
     const shadowRoot = this.attachShadow({ mode: "open" });
