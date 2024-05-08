@@ -7,7 +7,7 @@ module.exports = merge(common, {
   plugins: [
     new webpack.NormalModuleReplacementPlugin(
       /^\.\/src\/config\/config.ts/, // src/main.ts
-      "./src/config/config.prod.ts"
+      "./src/config/config.prod.ts",
     ),
   ],
 });

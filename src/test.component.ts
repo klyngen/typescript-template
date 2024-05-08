@@ -1,6 +1,5 @@
-import styles from './test-style.scss';
+import styles from "./test-style.scss";
 export class TestWebComponent extends HTMLElement {
-
   static styles = [styles];
 
   constructor() {
