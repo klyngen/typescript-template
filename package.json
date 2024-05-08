@@ -5,37 +5,42 @@
   "main": "index.ts",
   "scripts": {
     "start": "webpack serve -c webpack.dev.js",
-    "build": "webpack -c webpack.prod.js",
-    "test": "jest"
+    "build": "webpack -c webpack.prod.js; cp -R ./src/assets dist/",
+    "test": "webpack -c webpack.test.js;",
+    "test:watch": "webpack -c webpack.test.js --watch & jasmine-browser-runner --config=jasmine-browser.json",
+    "build:docker": "yarn; yarn build; docker build -t localhost/frontend:latest -f docker/Dockerfile ."
   },
   "keywords": [
-    "simple",
     "starter",
     "typescript",
-    "jest"
+    "lit"
   ],
   "author": "Martin Klingenberg",
   "license": "ISC",
   "devDependencies": {
-    "@types/jest": "^29.5.0",
+    "@open-wc/testing-helpers": "^3.0.1",
+    "@types/mocha": "^10.0.6",
+    "dotenv-webpack": "^8.0.1",
+    "glob": "^10.3.12",
     "html-webpack-plugin": "^5.5.0",
-    "jest": "^29.5.0",
-    "jest-environment-jsdom": "^29.5.0",
-    "sass": "^1.60.0",
+    "karma": "^6.4.3",
+    "karma-chrome-launcher": "^3.2.0",
+    "karma-mocha": "^2.0.1",
+    "karma-webpack": "^5.0.1",
+    "lit-scss-loader": "^2.0.1",
+    "mocha": "^10.4.0",
+    "sass": "^1.76.0",
     "sass-loader": "^13.2.2",
-    "ts-jest": "^29.0.5",
-    "ts-loader": "^9.4.2",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.0.2",
-    "webpack": "^5.77.0",
+    "ts-lit-plugin": "^2.0.1",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.5",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "5.0.4",
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "lit": "^2.7.0",
-    "lit-scss-loader": "^2.0.1",
-    "pwa-helpers": "^0.9.1",
-    "rxjs": "^7.8.0",
-    "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.13.1"
+    "lit": "^3.1.3",
+    "rxjs": "^7.8.1"
   }
 }
