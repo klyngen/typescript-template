@@ -3,22 +3,23 @@ module.exports = (config) => {
     // ... normal karma configuration
 
     // make sure to include webpack as a framework
-    frameworks: ["mocha", "webpack"],
-
-    plugins: ["karma-webpack", "karma-mocha", "karma-chrome-launcher"],
+    frameworks: ["jasmine", "webpack"],
+    reporters: ['mocha'],
+    plugins: ["karma-webpack", "karma-jasmine", "karma-mocha-reporter", "karma-chrome-launcher"],
 
     files: [
-      // all files ending in ".test.js"
-      // !!! use watched: false as we use webpacks watch
       { pattern: "src/**/*.spec.ts", watched: false },
+      { pattern: "src/**/*.test.ts", watched: false },
     ],
     browsers: ["ChromeHeadless"],
     preprocessors: {
       // add webpack as preprocessor
-      "src/**/*.spec.ts": ["webpack"],
+      "src/**/*.spec.ts": ["webpack" ],
+      "src/**/*.test.ts": ["webpack" ],
     },
-
+    loglevel: config.LOG_WARN,
     webpack: {
+      devtool: 'inline-source-map',
       resolve: {
         extensions: [".ts", ".js"],
       },
